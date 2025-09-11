@@ -1,0 +1,752 @@
+/*
+BOJE:
+PLAVA: rgb(51, 49, 112)
+SVETLO PLAVA: rgb(22, 132, 179)
+SVETLO SIVA: rgb(235, 235, 235)
+TAMNO SIVA: rgb(36, 36, 36)
+BELA: rgb(255, 255, 255)
+CRNA: rgb(0, 0, 0)
+
+*/
+/* ceo sajt */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+/* animacija */
+@keyframes upadLevo {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* animacija */
+@keyframes upadDesno {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* animacija */
+@keyframes upadOdozgo {
+    0% {
+        opacity: 0;
+        transform: translateY(-70px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+body {
+    background-color: rgb(235, 235, 235);
+}
+
+/* navigacija */
+.navbar {
+    display: flex;
+    padding: .5% 12%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(235, 235, 235);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 1000;
+}
+
+/* logo sirina */
+.navbar img {
+    width: 135px;
+
+}
+/* linkovi namesteni */
+.nav-links {
+    flex:1;
+    text-align: right;
+}
+
+/* stil teksta linkova */
+.nav-links ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 8px 12px;
+    position: relative;
+    font-weight:600;
+}
+
+/* stil linkova */
+.nav-links ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.3s ease;
+}
+
+/* kontakt dugme stil */
+#kontakt-dugme a {
+    display:inline-block;
+    background: rgb(51, 49, 112);
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+	padding: 13px 20px;
+	font-size: 12px;
+	font-weight: 600;
+    color: rgb(255, 255, 255);
+	justify-content: center;
+	text-align: center;
+}
+
+/* stil kontakt ako se predje preko */
+#nije-kontakt:hover a {
+    color: rgb(120, 120, 249);
+}
+
+/* kontakt dugme hover stil */
+#kontakt-dugme a:hover {
+    background-color: rgb(22, 132, 179);
+}
+
+/* header */
+.header {
+    min-height: 80vh;
+    width: 100%;
+    background-image: linear-gradient(90deg,rgba(36, 36, 36, 0.35), rgba(36, 36, 36, 0.35)), url('images/hero.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    margin-top: 100px;
+    clip-path: polygon(100% 0%, 0% 0% , 0.00% 95.00%, 2.00% 94.16%, 4.00% 93.34%, 6.00% 92.55%, 8.00% 91.79%, 10.00% 91.08%, 12.00% 90.44%, 14.00% 89.86%, 16.00% 89.37%, 18.00% 88.97%, 20.00% 88.66%, 22.00% 88.45%, 24.00% 88.35%, 26.00% 88.35%, 28.00% 88.45%, 30.00% 88.66%, 32.00% 88.97%, 34.00% 89.37%, 36.00% 89.86%, 38.00% 90.44%, 40.00% 91.08%, 42.00% 91.79%, 44.00% 92.55%, 46.00% 93.34%, 48.00% 94.16%, 50.00% 95.00%, 52.00% 95.84%, 54.00% 96.66%, 56.00% 97.45%, 58.00% 98.21%, 60.00% 98.92%, 62.00% 99.56%, 64.00% 100.14%, 66.00% 100.63%, 68.00% 101.03%, 70.00% 101.34%, 72.00% 101.55%, 74.00% 101.65%, 76.00% 101.65%, 78.00% 101.55%, 80.00% 101.34%, 82.00% 101.03%, 84.00% 100.63%, 86.00% 100.14%, 88.00% 99.56%, 90.00% 98.92%, 92.00% 98.21%, 94.00% 97.45%, 96.00% 96.66%, 98.00% 95.84%, 100.00% 95.00%);
+}
+
+/* tekts u headeru */
+.text-box {
+    color: rgb(255, 255, 255);
+    top: 45%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+/* naslov */
+.text-box h1 {
+    font-size: 50px;
+    animation-duration: 2s;
+    animation-name: upadOdozgo;
+}
+
+/* tekst ispod naslova */
+.text-box p {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: rgb(241, 241, 241);
+    font-weight: 600;
+
+    animation-duration: 2s;
+    animation-name: upadOdozgo;
+}
+
+/* kontakt dugme v2 */
+.btn {
+    background: rgb(51, 49, 112);
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+	padding: 13px 20px;
+	font-size: 12px;
+	font-weight: 600;
+    color: rgb(255, 255, 255);
+	justify-content: center;
+	text-align: center;
+    display:inline-block;
+    text-decoration: none;
+
+    animation-duration: 2s;
+    animation-name: upadLevo;
+}
+
+/* kontakt dugme hover v2 */
+.btn:hover {
+    background-color: rgb(22, 132, 179);
+}
+
+/* dugme kocke */
+.btn2 {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    padding: 13px 20px;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    animation-duration: 2s;
+    animation-name: upadDesno;
+}
+
+/* dugme kocke hover */
+.btn2:hover {
+    background-color: rgb(0, 0, 0);
+}
+
+
+/* upad na header sa donje strane koji drzi sve elemente */
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  top: -90px;
+}
+
+/* red koji drzi 3 baloncica */
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* svi balocnici */
+.container-mali {
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 20px;
+    margin-right: 20px;
+    flex: 1;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+
+    animation-duration: 2s;
+    animation-name: upadOdozdo;
+}
+
+/* baloncici naslov */
+.container-mali h3 {
+    color: rgb(51, 49, 112);
+    font-weight: 900;
+}
+
+/* baloncici tekst */
+.container-mali p {
+    font-weight: 600;
+}
+
+/* about sekcija */
+.about {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    background-image: linear-gradient(90deg, rgb(14, 16, 88), rgb(86, 86, 151));
+}
+
+/* about sekcija unutrasnji container */
+.about-container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    gap: 0;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* slika velicina div-a */
+.cetrdeset {
+    flex: 0 0 40%;
+}
+
+/* slika velicina */
+.cetrdeset img {
+    width: 85%;
+    border-radius: 20px;
+}
+
+/* tekst velicina */
+.sezdeset {
+    flex: 0 0 60%;
+    padding-left: 60px;
+}
+
+/* tekst naslov */
+.sezdeset h2 {
+    color: rgb(22, 132, 179);
+    font-size: 35px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    width: 80%;
+    text-align: left;
+}
+
+/* tekst */
+.sezdeset p {
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 600;
+    width: 80%;
+    text-align: left;
+}
+
+/* brojevi sekcija */
+.brojke {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* brojevi sekcija unutrasnji container */
+.brojke-container {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* brojevi edit */
+.brojke-mali h2 {
+    color: rgb(51, 49, 112);
+    font-size: 64px;
+    font-weight: 900;
+}
+
+/* brojevi tekst */
+.brojke-mali p {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* footer */
+footer {
+    background-image: linear-gradient(90deg, rgb(86, 86, 151),  rgb(14, 16, 88));
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* footer container */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+/* footer unutrasnji elementi */
+.footer-mini {
+    flex: 1;
+    box-sizing: border-box;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* footer logo velicina */
+.footer-logo {
+    width: 200px;
+}
+
+/* footer navigacija */
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* footer linkovi razmak */
+.footer-nav li {
+    margin-bottom: 10px;
+}
+
+/* footer linkovi stil */
+.footer-nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+/* footer linkovi hover */
+.footer-nav a:hover {
+    text-decoration: none;
+}
+
+/* BL logo */
+.footer-bl-logo {
+    width: 100px;
+}
+
+/* BL tekst */
+.footer-mini p {
+    color : rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* footer copyright */
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    color:rgb(255, 255, 255);
+}
+
+
+/* O AUTORU */
+/* NA DALJE */
+
+
+/* Header/Hero sekcija */
+.header-aux {
+    min-height: 22vh;
+    width: 100%;
+    background-image: linear-gradient(90deg, rgb(14, 16, 88), rgb(86, 86, 151));
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    margin-top: 100px;
+    clip-path: polygon(100% 0%, 0% 0% , 0.00% 95.00%, 2.00% 94.16%, 4.00% 93.34%, 6.00% 92.55%, 8.00% 91.79%, 10.00% 91.08%, 12.00% 90.44%, 14.00% 89.86%, 16.00% 89.37%, 18.00% 88.97%, 20.00% 88.66%, 22.00% 88.45%, 24.00% 88.35%, 26.00% 88.35%, 28.00% 88.45%, 30.00% 88.66%, 32.00% 88.97%, 34.00% 89.37%, 36.00% 89.86%, 38.00% 90.44%, 40.00% 91.08%, 42.00% 91.79%, 44.00% 92.55%, 46.00% 93.34%, 48.00% 94.16%, 50.00% 95.00%, 52.00% 95.84%, 54.00% 96.66%, 56.00% 97.45%, 58.00% 98.21%, 60.00% 98.92%, 62.00% 99.56%, 64.00% 100.14%, 66.00% 100.63%, 68.00% 101.03%, 70.00% 101.34%, 72.00% 101.55%, 74.00% 101.65%, 76.00% 101.65%, 78.00% 101.55%, 80.00% 101.34%, 82.00% 101.03%, 84.00% 100.63%, 86.00% 100.14%, 88.00% 99.56%, 90.00% 98.92%, 92.00% 98.21%, 94.00% 97.45%, 96.00% 96.66%, 98.00% 95.84%, 100.00% 95.00%);
+}
+
+/* tekst u headeru */
+.text-box-aux {
+    color: rgb(255, 255, 255);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-size: 20px;
+}
+
+/* o autoru sekcija */
+.container-oautoru {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* o autoru sekcija unutrasnji container */
+.row-oautoru {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* o autoru slika */
+.slika-autor {
+    width: 400px;
+    border-radius: 350px;
+}
+
+/* o autoru tekst */
+.oautoru-tekst {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+/* o autoru tekst naslov */
+.oautoru-tekst h3 {
+    color: rgb(51, 49, 112);
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* o autoru tekst paragraf */
+.oautoru-tekst p {
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* KOCKE */
+/* NA DALJE */
+
+.obavestenje {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.obavestenje h2 {
+    color: rgb(51, 49, 112);
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* dugme kocke */
+.btn3 {
+    background: rgb(51, 49, 112);
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+	padding: 13px 20px;
+	font-size: 16px;
+	font-weight: 600;
+    color: rgb(255, 255, 255);
+	justify-content: center;
+	text-align: center;
+    display:inline-block;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* dugme kocke hover */
+.btn3:hover {
+    background-color: rgb(22, 132, 179);
+}
+
+/* katalog sekcija */
+.katalog {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* katalog grid */
+.katalog-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* red u katalogu */
+.katalog-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* item u katalogu */
+.katalog-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 310px;
+    height: 310px;
+    background: rgb(255, 255, 255);
+    border-radius: 30px;
+}
+
+/* naslov itema */
+.katalog-item h3 {
+    color: rgb(51, 49, 112);
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.brick-image {
+    width: 150px;
+    height: 150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*boje razmak i margina */
+.boje {
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+/*velicina kockice */
+.boje span {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+/* boje */
+.boje.crvena { background-color: red; }
+.boje.plava { background-color: blue; }
+.boje.zelena { background-color: green; }
+.boje.zuta { background-color: yellow; }
+
+/* <p> u itemu */
+.katalog-item p {
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+/* KONTAKT */
+/* NA DALJE */
+
+/*centriranje svega klasika */
+.kontakt-forma-informacije {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    box-sizing:  border-box;
+    justify-content: center;
+}
+
+/* smanjivanje unutrasnjeg */
+.container-kontakt  {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* kontakt forma */
+.kontakt-forma {
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px 0px 0px 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* forma */
+.forma {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* forma h2 */
+.forma h2  {
+    color: rgb(0, 0, 0);
+    font-size: 35px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+/* forma input */
+
+.forma input, textarea{
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(22, 132, 179);
+    width: 70%;
+    font-size: 20px;
+    padding: 16px 16px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* forma input fokus */
+.forma input:focus, textarea:focus {
+    outline: none;
+    border-color: rgb(51, 49, 112);
+}
+
+/* forma dugme */
+.btn4 {
+    background: rgb(51, 49, 112);
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+	padding: 5px 20px;
+	font-size: 16px;
+	font-weight: 600;
+    color: rgb(255, 255, 255);
+	justify-content: center;
+	text-align: center;
+    display:inline-block;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 0px;
+}
+
+/* forma dugme hover */
+.btn4:hover {
+    background-color: rgb(22, 132, 179);
+    border-width: 0px;
+}
+
+/* kontakt informacije */
+.kontakt-informacije  {
+    width: 50%;
+    background-color: rgb(103, 103, 158);
+    border-radius: 0px 20px 20px 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* kontakt informacije h2 */
+.kontakt-informacije h2 {
+    color: rgb(51, 49, 112);
+    font-size: 35px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+/* kontakt informacije h3 */
+.kontakt-informacije h3 {
+    color: rgb(51, 49, 112);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* kontakt informacije p */
+.kontakt-informacije p {
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 600;
+    margin-block-end: 18px;
+}
+
+/* telefon ikonica */
+.telefon {
+    margin-bottom: -5px;
+    margin-right: 7px;
+}
+
+/* PIB i MB */
+.tekst-obojen {
+    color: rgb(51, 49, 112);
+    font-weight: 800;
+}
+
